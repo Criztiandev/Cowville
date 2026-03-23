@@ -1,0 +1,49 @@
+# This .gitignore file should be placed at the root of your Unity project directory
+#
+# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+#
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity3D generated file on crash reports
+sysinfo.txt
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Crashlytics generated file
+crashlytics-build.properties
+
+# Packed tutorial archive for packages
+*.tgz
+
+# =========================================================
+# Custom rules for minimal tracking (Code & Settings ONLY)
+# Ignore heavy art/audio/animation assets that bloat repo
+# =========================================================
+
+# Ignore all Art assets (Animations, Audio, Sprites, Models, etc.)
+/Assets/App/Art/
+/Assets/App/Art.meta
+
+# Optionally, you can ignore all specific extensions globally if you want:
+# *.png
+# *.jpg
+# *.wav
+# *.mp3
+# *.fbx
+# *.obj
