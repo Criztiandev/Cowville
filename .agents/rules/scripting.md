@@ -96,6 +96,7 @@ public class GameEventSO : ScriptableObject
 - Use the **New Input System** exclusively — never `Input.GetKey` / `Input.GetAxis`.
 - Define one `.inputactions` asset per player/context.
 - Bind actions in `OnEnable` / `OnDisable`.
+- **Explicitly Banned**: Legacy `OnMouseDown`, `OnMouseUp`, `OnMouseEnter`, etc., are strictly prohibited. Use `IPointerDownHandler` and the Unity Event System (with a `Physics2DRaycaster` on the Camera) for interaction.
 
 ---
 
