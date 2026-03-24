@@ -30,6 +30,20 @@ namespace App.Shared.Scripts.UI
             
             // Using compile-time string literally or .SetText() is necessary to avoid GC allocation.
             _textComponent.text = text;
+            _textComponent.color = Color.green; // Reset money color
+            _textComponent.alpha = 1f;
+            
+            _pool = pool;
+            _timer = 0f;
+        }
+
+        public void InitializeDamage(Vector2 startPos, int amount, ObjectPool<FloatingText> pool)
+        {
+            transform.position = startPos;
+            
+            // Native TMPro string formatting (Zero GC assignment)
+            _textComponent.SetText("-{0}", amount);
+            _textComponent.color = Color.red; // Set red for damage
             _textComponent.alpha = 1f;
             
             _pool = pool;

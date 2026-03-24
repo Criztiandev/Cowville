@@ -22,7 +22,7 @@ namespace App.Shared.Scripts.UI
             base.Awake();
             
             _pool = new ObjectPool<FloatingText>(
-                createFunc: () => Instantiate(_prefab),
+                createFunc: () => Instantiate(_prefab, transform),
                 actionOnGet: ft => ft.gameObject.SetActive(true),
                 actionOnRelease: ft => ft.gameObject.SetActive(false),
                 actionOnDestroy: ft => Destroy(ft.gameObject),
@@ -47,6 +47,12 @@ namespace App.Shared.Scripts.UI
         {
             var floatingText = _pool.Get();
             floatingText.Initialize(position, text, _pool);
+        }
+
+        public void SpawnDamageText(Vector2 position, int damage)
+        {
+            var floatingText = _pool.Get();
+            floatingText.InitializeDamage(position, damage, _pool);
         }
     }
 }
