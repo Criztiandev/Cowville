@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using App.Features.Managers.Scripts;
+using App.Shared.Scripts.UI;
 
 namespace App.Features.Nexus.Scripts
 {
@@ -18,6 +19,7 @@ namespace App.Features.Nexus.Scripts
         public void OnPointerDown(PointerEventData eventData)
         {
             EconomyManager.Instance.AddMoney(_moneyPerTap);
+            FloatingTextPool.Instance.Spawn(eventData.pointerCurrentRaycast.worldPosition, "+$1");
         }
     }
 }
