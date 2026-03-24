@@ -18,5 +18,12 @@ namespace App.Features.Managers.Scripts
 
         [Tooltip("Current amount of coins.")]
         public int CurrentCoins = 0;
+
+        public void AddMoney(int amount)
+        {
+            CurrentCoins += amount;
+            // Optionally dispatch an SO event here in the future
+            Debug.Log($"[EconomyManager] Added {amount} money. Total Coins: {CurrentCoins}");
+        }
     }
 }
